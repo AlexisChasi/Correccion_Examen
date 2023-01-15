@@ -1,3 +1,7 @@
+import COMIDA.COMIDAS;
+import COMIDA.costa;
+import COMIDA.sierra;
+import COMIDA.oriente;
 import GRUPOSMUSICALES.GRUPOS;
 import GRUPOSMUSICALES.GrupoBanda;
 import GRUPOSMUSICALES.GrupoRock;
@@ -12,6 +16,7 @@ import java.util.ArrayList;
 public class principal {
     public static ArrayList<VIDEOJUEGO> misJuegos = new ArrayList<>();
     public static ArrayList<GRUPOS> misgrupos = new ArrayList<>();
+    public static ArrayList<COMIDAS> miscomidas = new ArrayList<>();
 
     public static void main(String[] args) {
         try {
@@ -41,6 +46,17 @@ public class principal {
             for (GRUPOS grupos : misgrupos) {
                 grupos.mostrarInfo();
             }
+            System.out.println("\tCOMIDAS AL REDEDOR DEL MUNDO\n");
+            costa comidacosta=new costa("ENCEBOLLADO","ECUADOR","COCINADO","ALBACORA","MANABI");
+            sierra comidasierra= new sierra("YAGUARLOCRO","ECUADOR","COCINADO","SANGRE DE VACA","REGION INTERANDINA");
+            oriente comidaoriente=new oriente("CHONTACURO","ECUADOR","VIVO","CHONTACURO","SUCUMBIOS");
+            miscomidas.add(comidacosta);
+            miscomidas.add(comidasierra);
+            miscomidas.add(comidaoriente);
+            for (COMIDAS comidas : miscomidas) {
+                comidas.mostrarInfo();
+            }
+
         } catch (Exception e) {
 
             System.out.println("\nDatos Incorrectos!! ... Finalizado!!....");
